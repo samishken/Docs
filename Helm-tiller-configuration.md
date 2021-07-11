@@ -34,6 +34,30 @@ kubectl -n kube-system create serviceaccount tiller
 kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
 ```
 
+## Inside Jenkins server
+```sh
+su - jenkins
+ __-bash-4.2$ pwd__
+ __/var/lib/jenkins__
+
+mkdir .kube
+cd .kube
+```
+
+## Inside Kubernetes master copy cluster configuration
+
+```sh
+cat /etc/kubernetes/admin.conf
+```
+
+## back to Jenkins server paste the copied cluster configuration from k8s master server
+
+```sh
+cd .kube
+vi config
+```
+
+
 ## Copy admin.conf file from Kubernetes master to Jenkins user's home directory in Jenkins server
 
 ```sh
