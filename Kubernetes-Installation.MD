@@ -102,10 +102,17 @@ cp /etc/kubernetes/admin.conf /home/kubeadmin/.kube/config
 chown -R kubeadmin:kubeadmin /home/kubeadmin/.kube
 chmod -R 755 /home/kubeadmin/.kube/
 ```
-##### Deploy Calico network
-This has to be done as the user in the above step (in my case it is __praveen__)
+
 ```sh
-kubectl create -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
+yum -y install wget
+```
+
+
+##### Deploy Calico network / establish networking
+This has to be done as the user in the above step (in my case it is __kubeadmin__)
+```sh
+wget https://docs.projectcalico.org/v3.9/manifests/calico.yaml
+kubectl create -f calico.yaml
 ```
 
 ##### Cluster join command
