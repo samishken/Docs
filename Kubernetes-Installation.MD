@@ -100,6 +100,7 @@ passwd kubeadmin
 mkdir /home/kubeadmin/.kube
 cp /etc/kubernetes/admin.conf /home/kubeadmin/.kube/config
 chown -R kubeadmin:kubeadmin /home/kubeadmin/.kube
+chmod -R 755 /home/kubeadmin/.kube/
 ```
 ##### Deploy Calico network
 This has to be done as the user in the above step (in my case it is __praveen__)
