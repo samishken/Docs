@@ -24,7 +24,7 @@ Perform all the commands as root user unless otherwise specified
 Use the Docker repository to install docker.
 > If you use docker from CentOS OS repository, the docker version might be old to work with Kubernetes v1.13.0 and above
 ```
-```sh
+```
 yum install -y -q yum-utils device-mapper-persistent-data lvm2 > /dev/null 2>&1
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo > /dev/null 2>&1
 yum install -y -q docker-ce >/dev/null 2>&1
